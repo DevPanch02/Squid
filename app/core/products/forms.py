@@ -41,7 +41,7 @@ class ProductoForms(ModelForm):
             'email':widgets.EmailInput(
                 attrs={
                     'class':'form-control',
-                    'placeholder':'Ingrese email',
+                    'placeholder':'Ingrese username',
                     'input_type':'email',
                     'autocomplete':'off',
                 }
@@ -55,5 +55,19 @@ class ProductoForms(ModelForm):
                     'autocomplete':'off',
                 }
             ),
+            'estado':widgets.Select(
+                attrs={
+                    'class':'form-control',
+                    'placeholder':'estado',
+                    'autocomplete':'on',
+                }
+            ),
+            'date_joined':widgets.DateTimeInput(
+                attrs={
+                    'class':'form-control',
+                    'input_type': 'date'
+                }
+            ),
             
-        }
+            
+        } 

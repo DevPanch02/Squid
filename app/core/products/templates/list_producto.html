@@ -1,12 +1,15 @@
 {% extends 'list.html' %}
 
+{% block title %}  <title> {{ title1 }} </title>  {% endblock %}
+
 {% block columns %}
     <tr>
         <th scope="col" >Categoria</th>
         <th scope="col" >Usuario</th>
         <th scope="col" >Apellido</th>
         <th scope="col" >Direccion</th>
-        <th scope="col" >Email</th>
+        <th scope="col" >Username</th>
+        <th scope="col" >Estado</th>
         <th scope="col" >Opciones</th>
     </tr>
 {% endblock %}
@@ -20,6 +23,8 @@
             <td>{{ c.apellido }}</td>
             <td>{{ c.direccion }}</td>
             <td>{{ c.email }}</td>
+            <td>{{ c.estado }}</td>
+            
             
 
             

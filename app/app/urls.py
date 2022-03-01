@@ -17,13 +17,21 @@ from django.contrib import admin
 from django.urls import path, include
 from core.category.views.views import *
 from core.login.views import LoginFormView
+from core.usuarios.views.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('categoria/', include('core.category.urls')),
     path('usuarios/', include('core.products.urls')),
-    path('venta/', include('core.venta.urls')),
     path('login/', include('core.login.urls'), name='login'),
+    path('ingreso/', include('core.ingreso.urls'), name='ingreso'),
+    path('pages/', include('core.paginas.urls'), name='pages'),
+
+
+    #REGISTRO
+    path('registro/', registro, name='registro'),
+    #path('login/', login, name='login'),
+
 
     
 

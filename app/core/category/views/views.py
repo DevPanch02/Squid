@@ -6,13 +6,20 @@ from core.category.views.views import *
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, FormView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, FormView, TemplateView
 
 from core.category.models import Categoria
 from core.category.forms import CategoryForm
 from core.category.mixmin import IsSuperUser
 
 
+class home(TemplateView):
+    template_name = 'dashboard.html'
+
+    def get_context_data(self, **kwargs) :
+        context = super().get_context_data(**kwargs) 
+        context['title']='hola'
+        return context
 
 class CategoriaListView(LoginRequiredMixin, IsSuperUser, ListView):
 

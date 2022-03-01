@@ -5,7 +5,7 @@
              alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">Technology</span>
+        <span class="brand-text font-weight-light">Squid</span>
     </a>
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -13,12 +13,22 @@
                 <img src="{% static 'img/user.png' %}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">User</a>
+                <a href="#" class="d-block">{{user.username}}</a>
             </div>
         </div>
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-header">Mantenimientos</li>
+                <li class="nav-header"> <b>OPCIONES</b> </li>
+
+                <li class="nav-item">
+                    <a href=" {% url 'home' %} " class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href=" {% url 'categoria_list' %} " class="nav-link">
                         <i class="nav-icon fas fa-truck-loading"></i>
@@ -36,10 +46,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href=" {% url 'list_page' %}  " class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Listar Usuario
+                            Paginas a visitar
                         </p>
                     </a>
                 </li>

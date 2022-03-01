@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     'core.login',
     'core.category',
     'core.products',
-    'core.venta',
+    'core.paginas',
+    'core.ingreso',
+    # 'core.usuarios',
+    # 'core.home',
+
 
     'widget_tweaks',
     
@@ -85,9 +89,13 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'prueba.sqlite3',
-    }
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'squid',
+            'USER': 'root',
+            'PASSWORD': '1234',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
 }
 
 
@@ -113,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-uc'
 
 TIME_ZONE = 'UTC'
 
@@ -139,4 +147,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL='/categoria/category/list/'
-LOGOUT_REDIRECT_URL='/login/'
+LOGOUT_REDIRECT_URL='/ingreso/'

@@ -25,13 +25,13 @@
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Inicio Session</p>
+            <p class="login-box-msg">Inicio Session1</p>
             <form action="." method="post">
                 
                 {% csrf_token %}
 
                 <div class="input-group mb-3">
-                    {{ form.username|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su username'  }}
+                    {{ form.username|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su nombre'  }}
                     
                     <div class="input-group-append">
                         <div class="input-group-text">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    {{ form.password|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su password' }}
+                    {{ form.password|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su contrasenia  ' }}
                     
                     <div class="input-group-append">
                         <div class="input-group-text">

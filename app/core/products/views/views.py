@@ -36,7 +36,7 @@ class CreateFormProduct(CreateView):
     
     def get_context_data(self, **kwargs) :
             context = super().get_context_data(**kwargs)
-            context['title1']="Creacion de Productos"
+            context['title1']="Creacion de Usuarios"
             return context
 
 class UpdateFormProduct(UpdateView):
@@ -47,7 +47,7 @@ class UpdateFormProduct(UpdateView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context['title']="Editar producto"
+        context['title']="Editar usuario"
         return context
 
 class DeleteFormProduct(DeleteView):
@@ -58,5 +58,5 @@ class DeleteFormProduct(DeleteView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context['title1']="Eliminar Producto"
+        context['title1']="Eliminar usuario"
         return context
