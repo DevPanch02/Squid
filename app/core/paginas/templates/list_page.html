@@ -1,0 +1,47 @@
+{% extends 'list.html' %}
+
+{% block title %}  <title> {{ title1 }} </title>  {% endblock %}
+
+{% block columns %}
+    <tr>
+        
+        <th scope="col" >Usuario</th>
+        <th scope="col" >Ingrese paginas a vistiar</th>
+        <th scope="col" >Opciones</th>
+    </tr>
+{% endblock %}
+
+{% block rows %}
+
+    {% for c in object_list %}
+        <tr>
+            
+            <td>{{ c.usuario }}</td>  
+            <td>{{ c.paginas }}</td>
+                     
+
+            <td>
+                {% block options %}
+                <a href=" {% url 'update_page' c.id %}  " type="button" class="btn btn-primary ">
+                    <i class="fas fa-edit"></i>
+                </a>
+                
+
+                {% endblock %}
+            </td>
+        </tr>
+    {% endfor %}
+
+{% endblock %}
+{% block new %}
+<div class="card-footer">
+    <a href=" {% url 'create_page' %} " class="btn btn-primary btn-flat">
+        <i class="fas fa-plus"></i> Nuevo registro
+    </a>
+
+    <a href=" {% url 'list_page' %} " class="btn btn-success btn-flat">
+        <i class="fas fa-retweet"></i> Actualizar
+    </a>
+</div>
+{% endblock %}
+
