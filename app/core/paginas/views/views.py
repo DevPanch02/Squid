@@ -15,7 +15,20 @@ class ListFormPaginas(ListView):
     #mantener Datos
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
-        context['title']='Listado de Productos'
+        context['title']='Listado de Páginas Bloqueadas'
+        paginas = Paginas.objects.all()
+        pag = []
+        characters = "'{}"
+        for pagina in paginas:
+            string = str({pagina.nombre})
+            for x in range(len(characters)):
+                string = string.replace(characters[x],"")
+            pag.append(string)
+        arr='\n'.join(str(e) for e in pag)
+        #print(arr)
+        f = open('/etc/squid/paginas','w')
+        f.write(arr)
+        f.close()
         return context
 
 class CreateFormPage(CreateView):
@@ -36,7 +49,7 @@ class CreateFormPage(CreateView):
     
     def get_context_data(self, **kwargs) :
             context = super().get_context_data(**kwargs)
-            context['title1']="Creacion de paginas"
+            context['title1']="Creación de páginas"
             return context
 
 
@@ -48,7 +61,7 @@ class UpdateFormPage(UpdateView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context['title']="Editar Pagina"
+        context['title']="Editar Página"
         return context
 
 class DeleteFormPage(DeleteView):
@@ -59,5 +72,5 @@ class DeleteFormPage(DeleteView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context['title1']="Eliminar pagina"
+        context['title1']="Eliminar página"
         return context

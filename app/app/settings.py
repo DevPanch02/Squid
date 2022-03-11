@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-b@8q@xf#jm0&i4l$y-+$_(!nak=(evf+wdck=k3#o2vy8z--6$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.10.254"]
 
 
 # Application definition
@@ -42,14 +42,12 @@ INSTALLED_APPS = [
 
     'core.login',
     'core.category',
-    'core.products',
     'core.paginas',
-    'core.ingreso',
-    # 'core.usuarios',
-    # 'core.home',
-
+    'core.usersquid',
+    'core.registerUser',
 
     'widget_tweaks',
+    'rest_framework'
     
 ]
 
@@ -91,8 +89,8 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'squid',
-            'USER': 'root',
-            'PASSWORD': '1234',
+            'USER': 'gancino',
+            'PASSWORD': 'G@ncino12345678',
             'HOST': 'localhost',
             'PORT': '3306',
         }
@@ -121,15 +119,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'es-uc'
+LANGUAGE_CODE = 'es-ec'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Guayaquil'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -147,4 +145,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL='/categoria/category/home/'
-LOGOUT_REDIRECT_URL='/ingreso/'
+LOGOUT_REDIRECT_URL='/login/'

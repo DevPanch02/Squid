@@ -1,0 +1,61 @@
+{% extends 'list.html' %}
+
+{% block title %}  <title> {{ title1 }} </title>  {% endblock %}
+
+{% block columns %}
+    <tr>
+        <th scope="col" >Categoria</th>
+        <th scope="col" >Apellidos</th>
+        <th scope="col" >Nombre de usuario</th>
+        <th scope="col" >Última sesión</th>
+        <th scope="col" >Estado</th>
+        <th scope="col" >Opciones</th>
+    </tr>
+{% endblock %}
+
+{% block rows %}
+
+    {% for c in object_list %}
+        <tr>
+            <td>{{ c.categoria }}</td>
+            <td>{{ c.apellido }}</td>
+            <td>{{ c.username }}</td>
+            {% if c.accedio != null %}
+                <td>{{ c.accedio }}</td>
+            {% else %}
+                <td>Ahún no se ha logeado</td>
+            {% endif %}
+            <td>{{ c.estado }}</td>
+            
+            
+
+            
+            <td>
+                {% block options %}
+                <a href=" {% url 'usuario_update' c.id %}  " type="button" class="btn btn-primary">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href=" {% url 'usuario_delete' c.id %} " type="button" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+                <a href=" {% url 'usuario_update_password' c.id %} " type="button" class="btn btn-secondary">
+                    <i class="fas fa-user"></i>
+                </a>
+                {% endblock %}
+            </td>
+        </tr>
+    {% endfor %}
+
+{% endblock %}
+{% block new %}
+<div class="card-footer">
+    <a href=" {% url 'usuario_crear' %} " class="btn btn-primary btn-flat">
+        <i class="fas fa-plus"></i> Nuevo registro
+    </a>
+
+    <a href=" {% url 'usuario_ver' %} " class="btn btn-success btn-flat">
+        <i class="fas fa-retweet"></i> Actualizar
+    </a>
+</div>
+{% endblock %}
+

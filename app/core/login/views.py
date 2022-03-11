@@ -13,8 +13,8 @@ class LoginFormView(LoginView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context['title']='Inicio Session'
-        context['subtitle']='Squid'
+        context['title']='Iniciar sesión'
+        context['subtitle']='Administración Squid'
         return context
 
 

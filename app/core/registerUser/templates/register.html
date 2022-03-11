@@ -1,0 +1,39 @@
+{% extends 'body_register.html'%}
+{% load widget_tweaks %}
+{% block content %}
+<form action="" method="post">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="fas fa-user"></i>
+            {{ title1 }}
+        </h3>
+        <div style="text-align: right;">
+            <a href=" {% url 'login' %} " ><span style="color: black;">¿Eres Administrador?</span>    Iniciar Sesión </a>
+        </div>
+    </div>
+    {% csrf_token %}
+    {{ form }}
+        {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Ah Ocurrido un Error</h5> 
+            </div>
+            <ul>
+                {% for field in form %}
+                    {% for errors in field.errors %}
+                        <li>
+                            {{ errors }}
+                        </li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+            {{ message.tags }}
+        {% endif %} 
+        <div class="card-footer " style="text-align: center;">
+            <button type="submit" class="btn btn-primary btn-flat container-fluid w-50">
+                <i class="fas fa-plus"></i> Guardar datos
+            </button>
+        </div>
+</form>
+{% endblock %}
+

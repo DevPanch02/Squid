@@ -4,9 +4,7 @@
 
 {% block columns %}
     <tr>
-        
-        <th scope="col" >Usuario</th>
-        <th scope="col" >Ingrese paginas a vistiar</th>
+        <th scope="col" >Páginas bloqueadas</th>
         <th scope="col" >Opciones</th>
     </tr>
 {% endblock %}
@@ -14,16 +12,17 @@
 {% block rows %}
 
     {% for c in object_list %}
-        <tr>
-            
-            <td>{{ c.usuario }}</td>  
-            <td>{{ c.paginas }}</td>
-                     
 
+        <tr> 
+            <td>{{ c.nombre }}</td>         
             <td>
                 {% block options %}
                 <a href=" {% url 'update_page' c.id %}  " type="button" class="btn btn-primary ">
                     <i class="fas fa-edit"></i>
+                </a>
+
+                <a href=" {% url 'delete_page' c.id %}  " type="button" class="btn btn-danger ">
+                    <i class="fas fa-trash-alt"></i>
                 </a>
                 
 
@@ -44,4 +43,6 @@
     </a>
 </div>
 {% endblock %}
+
+
 

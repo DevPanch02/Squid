@@ -14,7 +14,7 @@ class CategoryForm(ModelForm):
                 attrs={
                     'id':'name_product',
                     'class':'form-control',
-                    'placeholder':'Ingrese categoria',
+                    'placeholder':'Ingrese la categoria',
                     'autocomplete':'off',
                 }
             ),

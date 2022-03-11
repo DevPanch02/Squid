@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+{% block body %}
+    <body class="hold-transition sidebar-mini layout-fixed">
+    
+        <div class="container">
+
+            <center> <h1 class="m-0 text-dark"> Bienvenido al registro del servidor Squid <small></small></h1> </center> 
+                   
+            
+                    {% block content %}
+
+                    {% endblock %}
+
+                    <!-- Footer -->
+            {% include 'footer.html' %}
+   
+        <!-- Block javascript -->
+        {% block javascript %}
+    
+        {% endblock %}
+
+        </div>
+                            
+              
+  
+        
+    </body>
+{% endblock %}

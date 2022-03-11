@@ -60,7 +60,7 @@ class CategoriaCreateView(CreateView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context['title1']="Creacion de categoria"
+        context['title1']="Creación de categoria"
         context['form']=CategoryForm()
         return context
 
@@ -96,6 +96,6 @@ class CategoriaFormView(FormView):
 
     def get_context_data(self, **kwargs) :
         context = super().get_context_data(**kwargs)
-        context['title']="Form de categoria"
+        context['title']="Formulario de categoria"
         return context
 

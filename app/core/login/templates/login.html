@@ -25,23 +25,22 @@
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Inicio Session1</p>
+            <p class="login-box-msg">Iniciar sesión</p>
             <form action="." method="post">
                 
                 {% csrf_token %}
 
                 <div class="input-group mb-3">
-                    {{ form.username|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su nombre'  }}
+                    {{ form.username|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su nombre de usuario'}}
                     
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <i class="fa-solid fa-user"></i>
-                            <span class="person-outline"></span>
+                            <span class="fas fa-user"></span>
                         </div>
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    {{ form.password|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su contrasenia  ' }}
+                    {{ form.password|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su contraseña' }}
                     
                     <div class="input-group-append">
                         <div class="input-group-text">
@@ -52,7 +51,7 @@
 
                 <dvi class="row">
                     <div class="col-lg-12">
-                        <button type="submit" class="btn btn-primary btn-block" >Inicio Session
+                        <button type="submit" class="btn btn-primary btn-block" >Iniciar sesión
                             <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>

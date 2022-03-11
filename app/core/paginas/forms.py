@@ -14,10 +14,10 @@ class paginaForm(ModelForm):
                     'autocomplete':'on',
                 }
             ),
-            'paginas':widgets.TextInput(
+            'nombre':widgets.TextInput(
                 attrs={
                     'class':'form-control',
-                    'placeholder':'Paginas',
+                    'placeholder':'Ingrese la página web a bloquear',
                     'autocomplete':'on',
                 }
             ),
